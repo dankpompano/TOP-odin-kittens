@@ -1,0 +1,20 @@
+<% content_for :title, "Editing kitten" %>
+
+<h1>Editing kitten</h1>
+
+<%= render "form", kitten: @kitten %>
+
+<br>
+
+<div>
+
+<% if !!flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <p><%= e %></p> <br>
+  <% end %>
+<% end %>
+
+  <%= link_to "Show this kitten", @kitten %> |
+  <%= link_to "Back to kittens", kittens_path %>
+  <%= button_to "Delete this kitten", @kitten, method: :delete%>  
+</div>
